@@ -28,3 +28,6 @@ def generate_qr():
         })
     except Exception as e:
         return jsonify({'success': False, 'error': str(e)}), 500
+#para probar de manera local  
+if __name__ == '__main__':
+    app.run(debug=True, port=5000)

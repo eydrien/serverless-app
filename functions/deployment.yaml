@@ -1,0 +1,43 @@
+# Archivo de configuración para desplegar funciones Serverless (Google Cloud Functions)
+# Proyecto: Generador de Códigos QR Serverless
+
+# Función 1: generate-qr
+- name: generate-qr
+  runtime: python39
+  entryPoint: app  # Flask usa 'app' como punto de entrada
+  trigger: http
+  source: ./generate-qr
+  region: us-central1
+  availableMemoryMb: 256
+  timeout: 60s
+  allowUnauthenticated: true
+  environmentVariables:
+    ENV: "production"
+
+# Función 2: save-qr
+- name: save-qr
+  runtime: python39
+  entryPoint: app
+  trigger: http
+  source: ./save-qr
+  region: us-central1
+  availableMemoryMb: 512
+  timeout: 90s
+  allowUnauthenticated: true
+  environmentVariables:
+    BUCKET_NAME: "tu-bucket-name"
+    ENV: "production"
+
+# Función 3: get-qr-list
+- name: get-qr-list
+  runtime: python39
+  entryPoint: app
+  trigger: http
+  source: ./get-qr-list
+  region: us-central1
+  availableMemoryMb: 256
+  timeout: 60s
+  allowUnauthenticated: true
+  environmentVariables:
+    BUCKET_NAME: "tu-bucket-name"
+    ENV: "production"
