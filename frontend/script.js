@@ -1,4 +1,4 @@
-const API_URL = "https://REGION-PROJECT.cloudfunctions.net/generate-qr"; 
+const API_URL = "https://us-central1-serverless-qrapp.cloudfunctions.net/generate-qr"; 
 
 document.getElementById("generate-btn").addEventListener("click", async () => {
   const text = document.getElementById("qr-text").value;
