@@ -1,6 +1,8 @@
 
 # Generador de Códigos QR Serverless
 
+[Pantalla Principal]<img width="1013" height="299" alt="image" src="https://github.com/user-attachments/assets/5988ad20-af38-4cea-95c8-ac6b43942ec5" />
+
 Este proyecto implementa un generador de códigos QR usando funciones serverless en Google Cloud Functions, almacenamiento en Google Cloud Storage y un frontend estático.
 
 ## 🌐 URLs del Proyecto
@@ -60,15 +62,5 @@ app.run(port=int(os.environ.get("PORT", 8080)))
 ```
 --entry-point app
 ```
-
-
-## 📸 Captura
-``
-
-[Pantalla Principal]<img width="1013" height="299" alt="image" src="https://github.com/user-attachments/assets/5988ad20-af38-4cea-95c8-ac6b43942ec5" />
-
-
-``
-
 ## 👨‍💻 Autor
 Adrian David González Romero
