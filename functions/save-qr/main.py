@@ -16,7 +16,7 @@ def save_qr():
 
         # Crear cliente de Storage
         client = storage.Client()
-        bucket = client.bucket('tu-bucket-name')  # Cambia esto
+        bucket = client.bucket('qrapp-adriandavid-2025')
         blob_name = f"{uuid.uuid4()}.png"
 
         # Convertir base64 a bytes y guardar

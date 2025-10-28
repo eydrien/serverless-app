@@ -9,7 +9,7 @@ CORS(app)
 def list_qrs():
     try:
         client = storage.Client()
-        bucket = client.bucket('tu-bucket-name')  # Cambia esto
+        bucket = client.bucket('qrapp-adriandavid-2025')
         blobs = bucket.list_blobs()
 
         urls = [blob.public_url for blob in blobs]
