@@ -44,13 +44,13 @@ devuelven respuestas JSON.
   -------------------------------------------------------------------------------------------------------------------------
   Servicio                                         URL
   ------------------------------------------------ ------------------------------------------------------------------------
-  Frontend                                         https://storage.googleapis.com/qrapp-frontend-2025/index.html
+  Frontend                                         [https://storage.googleapis.com/qrapp-frontend-2025/index.html](https://generate-qr-q3wzpsnx4q-uc.a.run.app)
 
   generate-qr                                      https://us-central1-qr-generator-428718.cloudfunctions.net/generate-qr
 
-  save-qr                                          https://us-central1-qr-generator-428718.cloudfunctions.net/save-qr
+  save-qr                                          [https://us-central1-qr-generator-428718.cloudfunctions.net/save-qr](https://us-central1-serverless-qrapp.cloudfunctions.net/save-qr)
 
-  get-qr-list                                      https://us-central1-qr-generator-428718.cloudfunctions.net/get-qr-list
+  get-qr-list                                      [https://us-central1-qr-generator-428718.cloudfunctions.net/get-qr-list](https://us-central1-serverless-qrapp.cloudfunctions.net/get-qr-list)
   -------------------------------------------------------------------------------------------------------------------------
 
 ------------------------------------------------------------------------
