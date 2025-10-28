@@ -1,4 +1,4 @@
-const API_URL = "https://REGION-PROJECT.cloudfunctions.net/generate-qr"; // cambia al endpoint real
+const API_URL = "https://REGION-PROJECT.cloudfunctions.net/generate-qr"; 
 
 document.getElementById("generate-btn").addEventListener("click", async () => {
   const text = document.getElementById("qr-text").value;
