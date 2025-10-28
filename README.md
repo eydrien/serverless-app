@@ -61,8 +61,13 @@ app.run(port=int(os.environ.get("PORT", 8080)))
 --entry-point app
 ```
 
-## 📸 Capturas (agrega cuando tengas)
+
+## 📸 Capturas
+![Pantalla Principal]<img width="1013" height="299" alt="image" src="https://github.com/user-attachments/assets/5988ad20-af38-4cea-95c8-ac6b43942ec5" />
+![QR Generado]<img width="715" height="337" alt="image" src="https://github.com/user-attachments/assets/c9bfad1d-5748-48e4-bc73-dc01751e3c8a" />
+![Historial]<img width="643" height="431" alt="image" src="https://github.com/user-attachments/assets/80c3a845-f6ea-44ed-8204-06901413393d" />
 ```
+
 [Pantalla Principal]<img width="1013" height="299" alt="image" src="https://github.com/user-attachments/assets/5988ad20-af38-4cea-95c8-ac6b43942ec5" />
 [QR Generado]<img width="715" height="337" alt="image" src="https://github.com/user-attachments/assets/c9bfad1d-5748-48e4-bc73-dc01751e3c8a" />
 [Historial]<img width="643" height="431" alt="image" src="https://github.com/user-attachments/assets/80c3a845-f6ea-44ed-8204-06901413393d" />
