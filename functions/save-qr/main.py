@@ -7,21 +7,29 @@ BUCKET_NAME = "qrapp-adriandavid-2025"
 
 @functions_framework.http
 def app(request):
+
+    # Manejar preflight (CORS)
+    if request.method == 'OPTIONS':
+        response = jsonify({'ok': True})
+        response.headers.add('Access-Control-Allow-Origin', '*')
+        response.headers.add('Access-Control-Allow-Methods', 'GET, POST, OPTIONS')
+        response.headers.add('Access-Control-Allow-Headers', 'Content-Type')
+        return response, 200
+
     try:
         data = request.get_json(silent=True)
         image_data = data.get('image', '')
 
         if not image_data:
-            return jsonify({'success': False, 'error': 'Imagen no recibida'}), 400
+            response = jsonify({'success': False, 'error': 'Imagen no recibida'})
+            response.headers.add('Access-Control-Allow-Origin', '*')
+            return response, 400
 
-        # Convertir Base64 → bytes
         image_bytes = base64.b64decode(image_data.split(',')[1])
 
-        # Cliente de Cloud Storage
         client = storage.Client()
         bucket = client.bucket(BUCKET_NAME)
 
-        # Nombre único del archivo
         from uuid import uuid4
         file_name = f"qr_{uuid4().hex}.png"
 
@@ -29,9 +37,14 @@ def app(request):
         blob.upload_from_string(image_bytes, content_type="image/png")
         blob.make_public()
 
-        return jsonify({
+        response = jsonify({
             'success': True,
             'url': blob.public_url
         })
+        response.headers.add('Access-Control-Allow-Origin', '*')
+        return response, 200
+
     except Exception as e:
-        return jsonify({'success': False, 'error': str(e)}), 500
+        response = jsonify({'success': False, 'error': str(e)})
+        response.headers.add('Access-Control-Allow-Origin', '*')
+        return response, 500

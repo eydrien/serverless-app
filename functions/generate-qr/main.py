@@ -7,6 +7,14 @@ import functions_framework
 
 @functions_framework.http
 def app(request):
+    # Manejar preflight (CORS)
+    if request.method == 'OPTIONS':
+        response = jsonify({'ok': True})
+        response.headers.add('Access-Control-Allow-Origin', '*')
+        response.headers.add('Access-Control-Allow-Methods', 'GET, POST, OPTIONS')
+        response.headers.add('Access-Control-Allow-Headers', 'Content-Type')
+        return response, 200
+
     try:
         data = request.get_json(silent=True)
         text = data.get('text', '')
@@ -19,9 +27,14 @@ def app(request):
         qr.save(buffer, format='PNG')
         qr_base64 = base64.b64encode(buffer.getvalue()).decode('utf-8')
 
-        return jsonify({
+        response = jsonify({
             'success': True,
             'qr_image': f"data:image/png;base64,{qr_base64}"
         })
+        response.headers.add('Access-Control-Allow-Origin', '*')
+        return response, 200
+
     except Exception as e:
-        return jsonify({'success': False, 'error': str(e)}), 500
+        response = jsonify({'success': False, 'error': str(e)})
+        response.headers.add('Access-Control-Allow-Origin', '*')
+        return response, 500
